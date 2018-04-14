@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChanges, OnDestroy, Input } from '@angular/core';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'about',
@@ -10,8 +11,9 @@ export class AboutComponent implements OnInit,OnChanges, OnDestroy {
   private colorName:string="red";
 
 
-  constructor() { 
+  constructor(private es: EventService) { 
     console.log("Contrcutor Executed");
+    console.log(es.getEvents());
   }
 
   ngOnInit(): void {

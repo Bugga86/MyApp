@@ -12,6 +12,9 @@ import { DiscountPricePipe } from './pipes/discount-price.pipe';
 import { CurrencyPipe } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { EventService } from './services/event.service';
+import { RouterModule } from '@angular/router';
+import { AppRouteModule } from './routes/app-route/app-route.module';
 
 
 @NgModule({
@@ -29,9 +32,12 @@ import { RegisterComponent } from './components/register/register.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRouteModule
   ],
-  providers: [CurrencyPipe],
+  providers: [CurrencyPipe,
+  EventService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
