@@ -1,0 +1,41 @@
+<div class= "row">
+  <div class="col-md-6 col-sm-6 col col-md-offset-3 col-md-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2> Login</h2>
+        </div>
+        <div class="panel-body">
+            <form class="form" #myform="ngForm" (submit)="loginUser(myform)">
+              <div class="form-group">
+                  <label class="control-label">Username</label>
+                  <input type="text" class= "form-control" 
+                  name="username" [(ngModel)]="username" #uname="ngModel" [ngModelOptions]="{updateOn: 'submit'}"
+                  required minlength="6" maxlength="20"/>
+                <div class="text-danger" *ngIf="uname.touched && uname.errors">
+                    <div *ngIf="uname.errors.required">Username is Required</div>
+                    <div *ngIf="uname.errors.minlength">Mimimum 6 characters are required</div>
+                </div>  
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label">Password</label>
+                  <input type="password" class= "form-control" 
+                  name="password" [(ngModel)]="password" #pass="ngModel"
+                  required minlength="6" maxlength="24"/>
+                  <div class="text-danger" *ngIf="pass.touched && pass.errors">
+                        <div *ngIf="pass.errors.required">Password is Required</div>
+                        <div *ngIf="pass.errors.minlength">Mimimum 6 characters are required</div>
+                    </div>  
+              </div>
+
+              <div class="form-group">
+                  <button type="submit" class="btn btn-success">
+                  <span class= "glyphicon glyphicon-log-in"></span> Login
+                  </button>
+              </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+  

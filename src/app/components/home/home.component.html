@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Upcoming Events</h2>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+      Filter: Price 1000<input type="range" min="100" max="50000" #fPrice step="500"
+      value="{{filteredPrice}}" (change)="filteredPriceHandler(fPrice)" /> 2000: {{filteredPrice}}
+    </div>
+    
+    <div class="col-md-4">
+        <select class="form-control" #colorCtrl  (change)="applyColor(colorCtrl)">
+            <option *ngFor="let color of colors" value="{{color}}" >{{color}}</option>
+        </select>
+      </div>
+</div>
+
+<div class="row" [ngStyle]="{'backgroundColor':selectedColor}">
+  <div *ngFor="let item of events" >
+  <div class="col-md-4 col-sm-6" *ngIf="item.price<filteredPrice">
+    <div class="thumbnail" [ngClass]="{'highlight':item.price>=2000, 'highPrice':item.price>3000}">
+        <h4>{{item.title|titlecase}}</h4>
+        <label>Location:{{item.location|reverse}}</label><br>
+        <label>Date:{{item.eventDate|date:"dd-MMM-yyyy"|dateformat}}</label>
+        <label>Time: {{item.eventTime}}</label>
+        <label>Speakers:{{item.speakers}}</label>
+        <label>DiscountPrice:{{item.price|discountPrice:item.discountPercentage:"9769781658"}}</label><br>
+        <label>Price: {{item.price|currency:"INR"}}</label><br>
+        
+        <button class="btn btn-success">Register</button>
+    </div>
+  </div>
+  </div>  
+</div>

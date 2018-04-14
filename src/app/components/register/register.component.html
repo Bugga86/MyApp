@@ -1,0 +1,54 @@
+<div class= "row">
+    <div class="col-md-6 col-sm-6 col col-md-offset-3 col-md-offset-3">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2> Register</h2>
+          </div>
+          <div class="panel-body">
+              <form class="form" [formGroup]="form" (submit)="registerUser()">
+                  <div class="form-group">
+                      <label class="control-label">Full Name</label>
+                      <input type="text" class= "form-control" name="fullname" formControlName="fullname"/>
+                      <div class="text-danger" *ngIf="form.controls.fullname.touched && form.controls.fullname.errors">
+                        <div *ngIf="form.controls.fullname.errors.required">FullName is Required</div>
+                        <div *ngIf="form.controls.fullname.errors.minlength">Min 6 characters required </div>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label">Email</label>
+                      <input type="email" class= "form-control" name="email" formControlName="email"/>
+                      <div class="text-danger" *ngIf="form.controls.email.touched && form.controls.email.errors">
+                          <div *ngIf="form.controls.email.errors.email">Email format is invalid</div>
+                          
+                          </div>
+                  </div>
+
+                <div class="form-group">
+                    <label class="control-label">Username</label>
+                    <input type="text" class= "form-control" name="username" formControlName="username" />
+                    <div class="text-danger" *ngIf="form.controls.username.touched && form.controls.username.errors">
+                      <div *ngIf="form.controls.username.errors.required">Username is Required</div>
+                      <div *ngIf="form.controls.username.errors.minlength">Min 6 length required</div>
+                      </div>  
+                </div>
+  
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    <input type="password" class= "form-control" name="password" formControlName="password"/>
+                    <div class="text-danger" *ngIf="form.controls.password.touched && form.controls.password.errors">
+                      <div *ngIf="form.controls.password.required">Password is required</div>
+                      <div *ngIf="form.controls.password.minlength">Password length should be more than 6</div>
+                    </div>
+                </div>
+  
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                    <span class= "glyphicon glyphicon-log-in"></span> Register
+                    </button>
+                </div>
+  
+              </form>
+          </div>
+      </div>
+  </div>
+    
