@@ -16,11 +16,12 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(form){
-    if(form.valid){
-      console.log(form.value);
+    if(this.username === "Administrator" && this.password === "Administrator")
+    {
+      // localStorage.setItem("username",form.value.username);
+      sessionStorage.setItem("username",form.value.username);
     } else{
-      window.alert('Invalid data');
+      alert('Invalid User');
     }
-  }
-
+}
 }

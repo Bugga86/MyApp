@@ -1,0 +1,62 @@
+<div class= "row">
+    <div class="col-md-6 col-sm-6 col col-md-offset-3 col-md-offset-3">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2>Edit Event</h2>
+          </div>
+          <div class="panel-body">
+              <form class="form" [formGroup]="form" (submit)="updateEvent()">
+                  <div class="form-group">
+                      <label class="control-label">ID</label>
+                      <input type="text" class= "form-control" name="id" formControlName="id"/>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label">Title</label>
+                      <input type="text" class= "form-control" name="title" formControlName="title"/>
+
+                  </div>
+
+                <div class="form-group">
+                    <label class="control-label">Location</label>
+                    <input type="text" class= "form-control" name="location" formControlName="location" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">EventDate</label>
+                    <input type="text" class= "form-control" name="eventDate" formControlName="eventDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">EventTime</label>
+                    <input type="text" class= "form-control" name="eventTime" formControlName="eventTime"/>
+                </div>
+  
+                <div class="form-group">
+                    <label class="control-label">Price</label>
+                    <input type="text" class= "form-control" name="price" formControlName="price"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">DiscountPrice</label>
+                    <input type="text" class= "form-control" name="discountPercentage" formControlName="discountPrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Speakers</label>
+                    <input type="text" class= "form-control" name="speakers" formControlName="speakers"/>
+                </div>
+
+                
+  
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                    <span class= "glyphicon glyphicon-log-in"></span> Update
+                    </button>
+                </div>
+  
+              </form>
+          </div>
+      </div>
+  </div>
+    

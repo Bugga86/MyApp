@@ -16,6 +16,8 @@
       </div>
 </div>
 
+
+
 <div class="row" [ngStyle]="{'backgroundColor':selectedColor}">
   <div *ngFor="let item of events" >
   <div class="col-md-4 col-sm-6" *ngIf="item.price<filteredPrice">
@@ -29,6 +31,7 @@
         <label>Price: {{item.price|currency:"INR"}}</label><br>
         
         <button class="btn btn-success">Register</button>
+        <a [routerLink]="['/editevent',item.id]" class="btn btn-primary">Edit</a>
     </div>
   </div>
   </div>  

@@ -25,11 +25,17 @@ export class HomeComponent implements OnInit {
     this.selectedColor=color.value;
   }
   constructor(private es: EventService) { 
-    this.events = this.es.getEvents();
+    es.getEvents()
+      .subscribe(
+        (res) => this.events = res,
+        (err)=> console.log(err)
+      )
   }
 
   ngOnInit() {
     
   }
+
+
 
 }

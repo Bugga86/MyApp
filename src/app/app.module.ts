@@ -15,6 +15,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { EventService } from './services/event.service';
 import { RouterModule } from '@angular/router';
 import { AppRouteModule } from './routes/app-route/app-route.module';
+import { HttpClientModule} from '@angular/common/http';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { EditEventComponent } from './components/edit-event/edit-event.component';
+import { EventDataResolver } from './resolvers/event-data-resolver.service';
+import { AuthGuard } from './guards/auth-guard.services';
 
 
 @NgModule({
@@ -27,16 +32,21 @@ import { AppRouteModule } from './routes/app-route/app-route.module';
     DateformatPipe,
     DiscountPricePipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddEventComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRouteModule
+    AppRouteModule,
+    HttpClientModule
   ],
   providers: [CurrencyPipe,
-  EventService
+  EventService,
+  EventDataResolver,
+  AuthGuard
   ],
   bootstrap: [AppComponent]
 })
