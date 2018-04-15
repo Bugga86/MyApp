@@ -7,8 +7,8 @@ import { EventService } from '../../services/event.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit,OnChanges, OnDestroy {
-  private appName:string="My Sample App";
-  private colorName:string="red";
+   appName:string="My Sample App";
+   colorName:string="red";
 
 
   constructor(private es: EventService) { 

@@ -20,6 +20,9 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { EventDataResolver } from './resolvers/event-data-resolver.service';
 import { AuthGuard } from './guards/auth-guard.services';
+import { ConfirmLeaveGuard } from './guards/confirm-leave-guard.services';
+
+
 
 
 @NgModule({
@@ -34,7 +37,7 @@ import { AuthGuard } from './guards/auth-guard.services';
     LoginComponent,
     RegisterComponent,
     AddEventComponent,
-    EditEventComponent
+    EditEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { AuthGuard } from './guards/auth-guard.services';
   providers: [CurrencyPipe,
   EventService,
   EventDataResolver,
-  AuthGuard
+  AuthGuard,
+  ConfirmLeaveGuard
   ],
   bootstrap: [AppComponent]
 })

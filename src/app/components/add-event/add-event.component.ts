@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddEventComponent implements OnInit {
 
-  private form:FormGroup;
+  form:FormGroup;
 
   constructor(private fb:FormBuilder, private es:EventService, private router:Router) { }
 

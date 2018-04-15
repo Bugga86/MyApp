@@ -14,7 +14,7 @@ import { EventStatus } from '../../models/eventinfo';
 
 export class EditEventComponent implements OnInit {
 
-  private form:FormGroup;
+  form:FormGroup;
   id:string;
 
   constructor(private fb:FormBuilder, private es:EventService, private router:Router,

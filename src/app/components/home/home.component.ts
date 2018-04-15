@@ -8,13 +8,13 @@ import { EventService } from '../../services/event.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private filteredPrice:number= 1000;
+   filteredPrice:number= 1000;
 
-  private colors:string[]=['red','green','blue'];
+  colors:string[]=['red','green','blue'];
 
-  private selectedColor:string=undefined;
+   selectedColor:string=undefined;
 
-  private events:Eventinfo[];
+   events:Eventinfo[];
   
 
   filteredPriceHandler(Price){

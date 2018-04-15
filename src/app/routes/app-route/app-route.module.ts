@@ -9,6 +9,7 @@ import { AddEventComponent } from '../../components/add-event/add-event.componen
 import { EditEventComponent } from '../../components/edit-event/edit-event.component';
 import { EventDataResolver } from '../../resolvers/event-data-resolver.service';
 import { AuthGuard } from '../../guards/auth-guard.services';
+import { ConfirmLeaveGuard } from '../../guards/confirm-leave-guard.services';
 
 let routes:Routes=[
   { path: '', component: HomeComponent},
@@ -19,13 +20,18 @@ let routes:Routes=[
   { 
     path: 'addEvent', 
     component: AddEventComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canDeactivate: [ConfirmLeaveGuard]
   },
   { path: 'editevent/:id', 
     component:EditEventComponent,
     resolve: { 
       eventData:EventDataResolver
-    }
+    },
+  },
+  {
+    path: 'admin',
+    loadChildren: 'app/admin/app-admin.module#AppAdminModule'
   }
 ];
 
